@@ -88,13 +88,13 @@ class CuentaTest {
     }
 
     @Test
-    void retirarCantidadNegativaAumentaSaldoActualmente() {
-        Cuenta cuenta = new Cuenta(1000f, 0.12f);
+    void retirarCantidadNegativaLanzaExcepcionYNoCambiaLaCuenta() {
+        Cuenta cuenta = new Cuenta(1234f, 0.12f);
 
-        cuenta.retirar(-250f);
+        assertThrows(IllegalArgumentException.class, () -> cuenta.consignar(-1250f));
 
-        assertEquals(1250f, cuenta.saldo, DELTA);
-        assertEquals(1, cuenta.numeroRetiros);
+        assertEquals(1234f, cuenta.saldo, DELTA);
+        assertEquals(0, cuenta.numeroConsignaciones);
     }
 
     @Test
