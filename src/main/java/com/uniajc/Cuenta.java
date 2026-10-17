@@ -22,6 +22,9 @@ public class Cuenta {
     }
 
     public void retirar(float cantidad) {
+        if (cantidad < 0) {
+            throw new IllegalArgumentException("La cantidad a retirar no puede ser negativa");
+        }
         if (cantidad <= saldo) {
             saldo -= cantidad;
             numeroRetiros++;
