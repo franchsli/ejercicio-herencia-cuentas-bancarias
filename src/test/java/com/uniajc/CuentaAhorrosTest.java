@@ -48,4 +48,20 @@ public class CuentaAhorrosTest {
         assertEquals(100f, cuentaAhorros.saldo);
     }
 
+    @Test
+    void extractoMensualDisminuyeSaldoSiNumRetirosMayorQueRetirosSinComision(){
+        CuentaAhorros cuentaAhorros = new CuentaAhorros(100_000f, 0);
+        cuentaAhorros.numeroRetiros = 5;
+        cuentaAhorros.extractoMensual();
+        assertTrue(cuentaAhorros.saldo < 100_000f);
+    }
+
+    @Test
+    void extractoMensualNoDisminuyeSaldoSiNumRetirosNoSuperaRetirosSinComision(){
+        CuentaAhorros cuentaAhorros = new CuentaAhorros(100_000f, 0);
+        cuentaAhorros.numeroRetiros = 4;
+        cuentaAhorros.extractoMensual();
+        assertEquals(100_000f, cuentaAhorros.saldo);
+    }
+
 }

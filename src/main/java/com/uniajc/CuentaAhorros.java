@@ -41,8 +41,9 @@ public class CuentaAhorros extends Cuenta {
         if (numeroRetiros > NUMERO_RETIROS_SIN_COMISION) {
             int retirosExcedentes = numeroRetiros - NUMERO_RETIROS_SIN_COMISION;
             comisionMensual += retirosExcedentes * COMISION_RETIRO;
-            cuentaActivaSaldoMinimo();
         }
+        super.extractoMensual();
+        cuentaActivaSaldoMinimo();
     }
 
     @Override
