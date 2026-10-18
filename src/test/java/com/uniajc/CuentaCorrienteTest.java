@@ -43,4 +43,21 @@ public class CuentaCorrienteTest {
         assertEquals(0f, cuentaCorriente.sobregiro);
     }
 
+    @Test
+    void retirarMasDelSaldoProduceSobregiro(){
+        CuentaCorriente cuentaCorriente = new CuentaCorriente(100_000f, 0);
+        cuentaCorriente.retirar(120_000f);
+
+        assertEquals(20_000f, cuentaCorriente.sobregiro);
+    }
+
+    @Test
+    void retirarMenosDelSaldoNoProduceSobregiro(){
+        CuentaCorriente cuentaCorriente = new CuentaCorriente(100_000f, 0);
+        cuentaCorriente.retirar(80_000f);
+
+        assertEquals(0f, cuentaCorriente.sobregiro);
+        assertEquals(20_000f, cuentaCorriente.saldo);
+    }
+
 }

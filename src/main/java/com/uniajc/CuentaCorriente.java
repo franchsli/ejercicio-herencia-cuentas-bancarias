@@ -23,18 +23,6 @@ public class CuentaCorriente extends Cuenta {
         }
     }
 
-
-    // caso 1;
-    // saldo = 100.000
-    // retirarMonto = 120.000
-    // sobregiro = 20.000
-
-    // caso 2:
-    // saldo = 100.000
-    // retirarMonto = 80.000
-    // sobregiro = 0
-    // saldo final = 20.000
-
     @Override
     public void retirar(float cantidad) {
         if (saldo < cantidad) {
