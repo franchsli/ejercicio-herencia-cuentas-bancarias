@@ -14,11 +14,7 @@ public class CuentaAhorros extends Cuenta {
     }
 
     public boolean cuentaActivaSaldoMinimo() {
-        if (saldo >= SALDO_MINIMO) {
-            activa = true;
-        } else {
-            activa = false;
-        } 
+        activa = saldo >= SALDO_MINIMO;
         return activa;
     }
 
