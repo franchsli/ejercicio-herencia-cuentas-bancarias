@@ -4,9 +4,9 @@ public class CuentaAhorros extends Cuenta {
 
     protected boolean activa = false;
 
-    final float SALDO_MINIMO = 10000f;
-    final float COMISION_RETIRO = 1000f;
-    final int NUMERO_RETIROS_SIN_COMISION = 4;
+    private static final float SALDO_MINIMO = 10000f;
+    private static final float COMISION_RETIRO = 1000f;
+    private static final int NUMERO_RETIROS_SIN_COMISION = 4;
 
     CuentaAhorros(float saldo, float tasaAnual) {
         super(saldo, tasaAnual);
