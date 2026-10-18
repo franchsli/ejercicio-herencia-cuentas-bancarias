@@ -2,7 +2,7 @@ package com.uniajc;
 
 public class CuentaAhorros extends Cuenta {
 
-    protected boolean activa = false;
+    protected boolean activa;
 
     private static final float SALDO_MINIMO = 10000f;
     private static final float COMISION_RETIRO = 1000f;

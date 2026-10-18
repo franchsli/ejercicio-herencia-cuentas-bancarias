@@ -2,7 +2,7 @@ package com.uniajc;
 
 public class CuentaCorriente extends Cuenta {
 
-    protected float sobregiro = 0f; 
+    protected float sobregiro; 
 
     CuentaCorriente(float saldo, float tasaAnual) {
         super(saldo, tasaAnual);
