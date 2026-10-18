@@ -33,11 +33,6 @@ public class CuentaCorriente extends Cuenta {
         }
     }
 
-    @Override
-    public void extractoMensual() {
-        super.extractoMensual();
-    }
-
     @Override 
     public void imprimir() {
         super.imprimir();
