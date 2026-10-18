@@ -24,10 +24,8 @@ public class CuentaAhorros extends Cuenta {
 
     @Override
     public void consignar(float cantidad) {
-        if (activa) {
-            super.consignar(cantidad);
-            cuentaActivaSaldoMinimo();
-        }
+        super.consignar(cantidad);
+        cuentaActivaSaldoMinimo();
     }
 
     @Override

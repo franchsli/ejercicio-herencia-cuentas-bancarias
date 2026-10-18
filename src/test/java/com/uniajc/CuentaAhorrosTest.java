@@ -21,6 +21,20 @@ public class CuentaAhorrosTest {
     }
 
     @Test 
+    void consignarACuentaInactivaAumentaSaldo(){
+        CuentaAhorros cuentaAhorros = new CuentaAhorros(100f, 0);
+        cuentaAhorros.consignar(10_000f);
+        assertEquals(10_100f, cuentaAhorros.saldo);
+    } 
+
+    @Test 
+    void consignarLoSuficienteACuentaInactivaLaActiva(){
+        CuentaAhorros cuentaAhorros = new CuentaAhorros(1f, 0);
+        cuentaAhorros.consignar(9999f);
+        assertTrue(cuentaAhorros.activa);
+    } 
+
+    @Test 
     void retirarACuentaActivaDisminuyeSaldo(){
         CuentaAhorros cuentaAhorros = new CuentaAhorros(100_000f, 0);
         cuentaAhorros.retirar(10_000f);
