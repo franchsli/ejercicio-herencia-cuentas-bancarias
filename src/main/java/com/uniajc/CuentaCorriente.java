@@ -8,28 +8,6 @@ public class CuentaCorriente extends Cuenta {
         super(saldo, tasaAnual);
     }
 
-    // Caso 1:
-    // saldo = 10.000
-    // consignarMonto = 20.000
-    // sobregiro = 0
-    // saldo final = 30.000
-
-    // Caso 2:
-    // saldo = 0
-    // sobregiro = 10.000
-    // consignarMonto = 20.000
-    // saldo final = 10.000
-
-    // Caso 3:
-    // saldo = 0
-    // sobregiro = 10.000
-    // consignarMonto = 5.000
-    // saldo final = 0
-    // sobregiro final = 5.000
-    // cosingarMonto = 20.000
-    // sobregiro final = 0
-    // saldo final = 15.000
-
     @Override
     public void consignar(float cantidad) {
         if (sobregiro > 0) {
